@@ -1,0 +1,32 @@
+insert 1 ali1 ali1
+insert 17 ali17 ali17
+insert 25 ali25 ali25
+insert 6 ali6 ali6
+insert 8 ali8 ali8
+insert 22 ali22 ali22
+insert 29 ali29 ali29
+insert 14 ali14 ali14
+insert 4 ali4 ali4
+insert 27 ali27 ali27
+insert 2 ali2 ali2
+insert 23 ali23 ali23
+insert 13 ali13 ali13
+insert 26 ali26 ali26
+insert 3 ali3 ali3
+insert 7 ali7 ali7
+insert 12 ali12 ali12
+insert 5 ali5 ali5
+insert 18 ali18 ali18
+insert 21 ali21 ali21
+insert 16 ali16 ali16
+insert 19 ali19 ali19
+insert 28 ali28 ali28
+insert 11 ali11 ali11
+insert 15 ali15 ali15
+insert 20 ali20 ali20
+insert 9 ali9 ali9
+insert 10 ali10 ali10
+insert 24 ali24 ali24
+select
+.btree
+.exit
