@@ -30,10 +30,17 @@ input_file="${script_dir}/input.txt"
 > "${TEST_DB_PATH}"
 
 {
-    echo -n "Testing insert..." \
-    && cat "${input_file}" | "${EXEC_FILE_PATH}" "${TEST_DB_PATH}" > "${PROGRAM_STDOUT}" 2> "${PROGRAM_STDERR}" \
-    && printf " [\033[0;32msuccessful\033[0m]\n"
+    echo -n "Testing insert..." &&
+    cat "${input_file}" | "${EXEC_FILE_PATH}" "${TEST_DB_PATH}" > "${PROGRAM_STDOUT}" 2> "${PROGRAM_STDERR}" &&
+    inserted_row_counts=$(wc -l "${PROGRAM_STDOUT}" | cut -d ' ' -f 1) &&
+    if [ "${inserted_row_counts}" != "${INPUTS_COUNT}" ]; then
+        false
+    fi &&
+    printf " [\033[0;32msuccessful\033[0m]\n"
 } ||
 {
     printf " [\033[0;31mfail\033[0m]\n"
+    echo "Inserted rows: ${inserted_row_counts}"
+    echo "Expected: ${INPUTS_COUNT}"
 }
+
